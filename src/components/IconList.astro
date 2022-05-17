@@ -1,0 +1,18 @@
+---
+import { Icon } from "astro-icon";
+
+const { items, icon } = Astro.props;
+---
+<ul class="list-inside space-y-6">
+    {items.map((item) => (
+      <li class="flex align-top">
+        <div class="flex-none w-12">
+            <Icon class="h-6 w-6" name={icon} />
+        </div>
+        <div>
+            <h3 class="leading-none">{item.description}</h3>
+            <h4 class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">{item.place} • {item.period}</h4>
+        </div>
+      </li>
+      ))}
+</ul>
