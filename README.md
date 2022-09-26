@@ -2,6 +2,8 @@
 
 An Astro + Tailwind CSS personal one-page starter.
 
+The purpose of this project was to learn a little about Astro during the beta.
+
 > Why 'Slinky'?
 
 The design of the page is slim, long and made of horizontal sections - a bit like a coiled [Slinky](https://en.wikipedia.org/wiki/Slinky).
@@ -15,6 +17,10 @@ The design of the page is slim, long and made of horizontal sections - a bit lik
 - 📱 Responsive
 - ♿ Accessible
 - 🔎 SEO-enabled
+
+## Screenshot
+
+![Slinky page screenshot](screenshot.jpg)
 
 ## Updating content
 
