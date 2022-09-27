@@ -1,9 +1,10 @@
 ---
 const { heading } = Astro.props;
 ---
+
 <section class="bg-white dark:bg-zinc-800 p-16">
-    <h2 class="font-mono font-medium text-2xl mb-8">{heading}</h2>
-    <div class="text-base text-neutral-600 dark:text-neutral-300">
-        <slot />
-    </div>
+  <h2 class="font-mono font-medium text-2xl mb-8">{heading}</h2>
+  <div class="text-base text-neutral-600 dark:text-neutral-300">
+    <slot />
+  </div>
 </section>
