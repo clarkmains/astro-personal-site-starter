@@ -1,31 +1,39 @@
 ---
+import { Image } from "@astrojs/image/components";
 import AnchorButton from "~/components/AnchorButton.astro";
 import ThemeToggle from "~/components/ThemeToggle.astro";
 
 const { name, description, image } = Astro.props;
 ---
+
 <header class="bg-white dark:bg-zinc-800 p-16 rounded-t-md">
-    <div class="text-right">
-      <ThemeToggle />
-    </div>
+  <div class="text-right">
+    <ThemeToggle />
+  </div>
 
-    <div class="mt-6 mb-10">
-        <img 
-          alt="Headshot" 
-          class="rounded-full border-8 border-zinc-200 dark:border-zinc-600"
-          width="150" 
-          height="150" 
-          src={image}
-        >
-    </div>
+  <div class="mt-6 mb-10">
+    <Image
+      src={image}
+      width={150}
+      height={150}
+      alt="Headshot"
+      class="rounded-full border-8 border-zinc-200 dark:border-zinc-600"
+    />
+  </div>
 
-    <h1 class="font-mono font-bold tracking-wide text-4xl mb-8">
-      {name}
-    </h1>
-    <p class="tracking-wide leading-7 text-lg text-neutral-500 dark:text-neutral-400">
-      {description}
-    </p>
-    <div class="mt-14 text-center">
-      <AnchorButton label="Contact me" link="#contact" icon="akar-icons:arrow-down" />
-    </div>
+  <h1 class="font-mono font-bold tracking-wide text-4xl mb-8">
+    {name}
+  </h1>
+  <p
+    class="tracking-wide leading-7 text-lg text-neutral-500 dark:text-neutral-400"
+  >
+    {description}
+  </p>
+  <div class="mt-14 text-center">
+    <AnchorButton
+      label="Contact me"
+      link="#contact"
+      icon="akar-icons:arrow-down"
+    />
+  </div>
 </header>

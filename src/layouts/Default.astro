@@ -6,39 +6,37 @@ import Footer from "~/components/Footer.astro";
 import Section from "~/components/Section.astro";
 import IconList from "~/components/IconList.astro";
 
-const { content: { name, description, image, experience, education, contacts } } = Astro.props;
+const {
+  content: { name, description, image, experience, education, contacts },
+} = Astro.props;
 ---
+
 <!DOCTYPE html>
 <html lang="en" class="dark">
-    <head>
-      <MetaTags
-        title={name}
-        description={description}
-        image={image}
-        alt={name}
-      />
-    </head>
-	  <body class="antialiased text-neutral-900 dark:text-neutral-300 bg-neutral-100 dark:bg-zinc-900">
-        <main class="md:my-12 max-w-2xl mx-auto space-y-0.5">
+  <head>
+    <MetaTags title={name} description={description} image={image} alt={name} />
+  </head>
+  <body
+    class="antialiased text-neutral-900 dark:text-neutral-300 bg-neutral-100 dark:bg-zinc-900"
+  >
+    <main class="md:my-12 max-w-2xl mx-auto space-y-0.5">
+      <Header name={name} description={description} image={image} />
 
-            <Header name={name} description={description} image={image} />
+      <Section heading="About">
+        <article class="prose prose-zinc dark:prose-invert">
+          <slot />
+        </article>
+      </Section>
 
-            <Section heading="About">
-              <article class="prose prose-zinc dark:prose-invert">
-                <slot />
-              </article>
-            </Section>
+      <Section heading="Experience">
+        <IconList items={experience} icon="ic:outline-work-outline" />
+      </Section>
 
-            <Section heading="Experience">
-                <IconList items={experience} icon="ic:outline-work-outline" />
-            </Section>
-            
-            <Section heading="Education">
-                <IconList items={education} icon="bi:book" />
-            </Section>
+      <Section heading="Education">
+        <IconList items={education} icon="bi:book" />
+      </Section>
 
-            <Footer heading="Contact me" contacts={contacts} />
-
-		    </main>
-	  </body>
+      <Footer heading="Contact me" contacts={contacts} />
+    </main>
+  </body>
 </html>
